@@ -13,12 +13,23 @@ public class CameraSwitch : MonoBehaviour
      camera2.enabled = false;   
     }
 
-    // Update is called once per frame
+    // Update is called once per frame (Only click when click and cat)
     void Update()
     {
-     if (Input.GetKeyDown(KeyCode.C)){
+     if (Input.GetMouseButtonDown(0) && camera1.enabled && GameManager.Instance.isLookingAtSign){
          camera1.enabled = !camera1.enabled;
          camera2.enabled = !camera2.enabled;
+        camera1.GetComponent<AudioListener>().enabled = !camera1.GetComponent<AudioListener>().enabled;
+        camera2.GetComponent<AudioListener>().enabled = !camera2.GetComponent<AudioListener>().enabled;
+     StartCoroutine("Switch");
      }   
+    }
+    IEnumerator Switch()
+    {
+     yield return new WaitForSeconds (5);
+     camera1.enabled = !camera1.enabled;
+     camera2.enabled = !camera2.enabled;
+     camera1.GetComponent<AudioListener>().enabled = !camera1.GetComponent<AudioListener>().enabled;
+     camera2.GetComponent<AudioListener>().enabled = !camera2.GetComponent<AudioListener>().enabled;
     }
 }

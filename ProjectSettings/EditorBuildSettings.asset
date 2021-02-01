@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/StartandEnd/Credits.unity
     guid: 6c043b3868b7bd040a96120493600613
   - enabled: 1
-    path: Assets/StartandEnd/Exit.unity
-    guid: 9a95c6b4173e67b4cb424b048e217b19
-  - enabled: 1
     path: Assets/StartandEnd/Game.unity
     guid: 39f51285c78f06e41a567bf190e7ffd2
+  - enabled: 1
+    path: Assets/StartandEnd/Exit.unity
+    guid: 9a95c6b4173e67b4cb424b048e217b19
   m_configObjects: {}
